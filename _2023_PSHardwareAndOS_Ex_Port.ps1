@@ -1,4 +1,4 @@
-    #1.25.2023_MK_<@:D_99577
+    #10.31.2023_MK_<@:D_99577
     #V.3 adds user profile list 
     $usbDriveLetter = Get-CimInstance -Class Win32_DiskDrive -Filter 'InterfaceType = "USB"' -KeyOnly |`
     Get-CimAssociatedInstance -Association Win32_DiskDriveToDiskPartition -KeyOnly |`
