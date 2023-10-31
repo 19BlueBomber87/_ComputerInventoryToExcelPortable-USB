@@ -3,7 +3,7 @@
     $usbDriveLetter = Get-CimInstance -Class Win32_DiskDrive -Filter 'InterfaceType = "USB"' -KeyOnly |`
     Get-CimAssociatedInstance -Association Win32_DiskDriveToDiskPartition -KeyOnly |`
     Get-CimAssociatedInstance -Association Win32_LogicalDiskToPartition |`
-    Where-Object -Property VolumeName -like *Yahoo*
+    Where-Object -Property VolumeName -like *USB_STICK_NAME* #Enter the name of your USB Stick
     $usb = $usbDriveLetter.Name
     
 ##########FILENAME        
@@ -15,7 +15,7 @@ Import-Module -Name $usb\importexcel -Verbose *>&1
 # $file_name = "_PC_Inventory" + ".xlsx"
 # Save-Module importexcel -Path C:\Users\$ENV:USERNAME\Documents -Verbose *>&1
 # Import-Module -Name C:\Users\$ENV:USERNAME\Documents\importexcel -Verbose *>&1
-
+###################
     Import-Module -Name "$usb\ImportExcel" -Verbose *>&1
   ####Start###
     $Date = Get-Date -Format "MM-dd-yyyy HH:mm"
